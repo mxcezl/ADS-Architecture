@@ -1,0 +1,156 @@
+{
+	"info": {
+		"_postman_id": "94669d33-379f-4a6c-abe4-c5a18e8abaab",
+		"name": "TP - ADM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "WS ADM HL7",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ipp\" : \"TEST_IPP\",\r\n    \"nom\" : \"TEST_NOM\",\r\n    \"prenom\" : \"TEST_PRENOM\",\r\n    \"intit\" : \"TEST_INTIT\",\r\n    \"nommar\" : \"TEST_NOMMAR\",\r\n    \"ddn\" : \"TEST_DDN\",\r\n    \"sexe\" : \"TEST_SEXE\",\r\n    \"iep\" : \"TEST_IEP\",\r\n    \"adr1\" : \"TEST_ADR1\",\r\n    \"adr2\" : \"TEST_ADR2\",\r\n    \"cp\" : \"TEST_CP\",\r\n    \"ville\" : \"TEST_VILLE\",\r\n    \"pays\" : \"TEST_PAYS\",\r\n    \"tel\" : \"TEST_TEL\",\r\n    \"paysn\" : \"TEST_PAYSN\",\r\n    \"ddn\" : \"TEST_DDS\",\r\n    \"uf\" : \"TEST_UF\",\r\n    \"chambre\" : \"TEST_CHAMBRE\",\r\n    \"lit\" : \"TEST_LIT\",\r\n    \"ufmed\" : \"TEST_UFMED\",\r\n    \"numpas\" : \"TEST_NUMPAS\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/adm",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"adm"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "WS REQ",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/search?nom=CONSIGNY",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"search"
+					],
+					"query": [
+						{
+							"key": "prenom",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "ddn",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "nom",
+							"value": "CONSIGNY"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "WS UPDATE",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"datemsg\": \"ZIZI\",\r\n    \"nummsg\": \"TEST_NUMMSG\",\r\n    \"ipp\": \"TEST_IPP\",\r\n    \"nom\": \"CONSIGNY\",\r\n    \"prenom\": \"Maxime\",\r\n    \"intit\": \"M\",\r\n    \"nommar\": \"TEST_NOMMAR\",\r\n    \"ddn\": \"01-11-2000\",\r\n    \"sexe\": \"H\",\r\n    \"iep\": \"TEST_IEP\",\r\n    \"adr1\": \"6 rue des Bandits\",\r\n    \"adr2\": \"TEST_ADR2\",\r\n    \"cp\": \"59300\",\r\n    \"ville\": \"Valenciennes\",\r\n    \"pays\": \"France\",\r\n    \"tel\": \"+33626874498\",\r\n    \"paysn\": \"TEST_PAYSN\",\r\n    \"dds\": \"TEST_DDS\",\r\n    \"uf\": \"TEST_UF0\",\r\n    \"chambre\": \"TEST_CHAMBRE\",\r\n    \"lit\": \"TEST_LIT\",\r\n    \"ufmed\": \"TEST_UFMED\",\r\n    \"numpas\": \"4\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/api/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"update"
+					],
+					"query": [
+						{
+							"key": "prenom",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "ddn",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "WS DELETE",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"prenom\": \"Thierry\",\r\n    \"nom\": \"XU\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/api/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "prenom",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "ddn",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

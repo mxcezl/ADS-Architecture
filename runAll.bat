@@ -1,9 +1,9 @@
 cd DB_Pat
-docker compose up -d
+./runDocker.bat
 cd ..
 
 cd DB_Traces
-docker compose up -d
+./runDocker.bat
 cd ..
 
 cd wscreate
