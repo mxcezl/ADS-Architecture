@@ -1,0 +1,22 @@
+version: '3.5'
+services:
+  dblog:
+    container_name: dblog
+    command: postgres -c 'max_connections=200'
+    image: postgres:12
+    hostname: dblog
+    restart: always
+    ports:
+     - "5434:5432"
+    environment:
+     - POSTGRES_USER=postgres
+     - POSTGRES_PASSWORD=postgres
+     - POSTGRES_DB=dblog
+    volumes:
+     - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+     - ./log_data:/var/lib/postgresql/data
+    networks:
+     - tp-ads
+networks:
+    tp-ads:
+      name: tp-ads
